@@ -5,7 +5,7 @@ dependencies:
   version: 2.3.58
 - name: webinarjames
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.8
+  version: 0.0.9
 - alias: cleanup
   name: exposecontroller
   repository: http://chartmuseum.build.cd.jenkins-x.io
