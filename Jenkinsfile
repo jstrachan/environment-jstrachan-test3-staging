@@ -12,7 +12,7 @@ pipeline {
           //sh 'make build'
           dir('env') {
             sh 'jx version -b'
-            input "Paused"
+            //input "Paused"
             sh 'jx step helm build'
           }
         }
