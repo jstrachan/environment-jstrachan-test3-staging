@@ -2,13 +2,18 @@ pipeline {
   agent {
     label "jenkins-maven"
   }
-
-  
+  environment {
+      DEPLOY_NAMESPACE = 'jx-staging'
+  }
   stages {
     stage('Validate Environment') {
       steps {
         container('maven') {
-          sh 'make build'
+          //sh 'make build'
+          dir('env') {
+            input "Paused"
+            sh 'jx step helm build'
+          }
         }
       }
     }
@@ -18,7 +23,10 @@ pipeline {
       }
       steps {
         container('maven') {
-          sh 'make install'
+          //sh 'make install'
+          dir('env') {
+            sh 'jx step helm apply'
+          }
         }
       }
     }
