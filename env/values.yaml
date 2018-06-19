@@ -39,3 +39,6 @@ expose:
   Annotations:
     helm.sh/hook: post-install,post-upgrade
     helm.sh/hook-delete-policy: hook-succeeded
+    
+demo96:    
+  replicaCount: 2    
