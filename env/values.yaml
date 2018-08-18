@@ -42,3 +42,13 @@ expose:
     
 demo96:    
   replicaCount: 2    
+expose:
+  config:
+    domain: 104.199.34.161.nip.io
+    exposer: Ingress
+    http: "true"
+    tlsacme: "false"
+    pathMode: ""
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
